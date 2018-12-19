@@ -1,0 +1,14 @@
+header.top-header
+    .header__top
+        .header__column
+            i.fas.fa-plane
+            i.fas.fa-wifi
+        .header__column
+            span.header__time #{new Date().getHours()}:#{new Date().getMinutes()}
+        .header__column
+            i.fas.fa-moon
+            i.fab.fa-bluetooth-b
+            span.header__battery 48%
+                i.fas.fa-battery-three-quarters
+    .header__bottom
+        block content
