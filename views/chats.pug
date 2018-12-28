@@ -1,1 +1,15 @@
 extends layouts/main
+include mixins/chatsList
+
+block searchBar
+    include partials/searchBar
+block content
+    .chats
+        each item in chatsList
+            +chatsList({
+                id: item.user.id,
+                message: item.message,
+                date: item.date,
+                user: item.user.image
+            })
+    include partials/mainNav

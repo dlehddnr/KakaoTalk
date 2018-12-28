@@ -1,1 +1,11 @@
 extends layouts/main
+
+block content
+    .form-container
+        form(action=routes.editProfile, method="post")
+            label(for="avatar") Avatar
+            input(type="file", name="avatar", id="avatar" )
+            input(type="text" name="name" placeholder="Name")
+            input(type="email" name="email" placeholder="Email")
+            input(type="submit", value="Update Profile")
+<!-- Change Password -->

@@ -1,41 +1,58 @@
-// Main
-//HOME 화면은 화면크기를 맞춰달라는 문구를 띄우자.
+// Friends
 
-const HOME = '/';
-const FRIENDS = '/friends';
-const CHATS = '/chats';
-const FIND = '/find';
-const MORE = '/more';
+const HOME = "/";
+const LOGIN = "/login";
+const JOIN = "/join";
+const FRIENDS = "/friends";
+const FRINED_SEACH = "/friend-search";
+const FIND = "/find";
+const MORE = "/more";
 
-// Chat
+// Chats
 // 각각의 채팅방별 아이디가 있어야할듯
 
-const CHAT = '/:id';
-const CHAT_DELETE = '/:id/delete'
+const CHATS = "/chats";
+const CHATS_HOME = "/";
+const CHAT_SEARCH = "/chat-search";
+const CHAT = "/:id";
+const CHAT_DELETE = "/chat-delete";
+const CREATE_CHAT = "/create-chat";
 
+// Search
 
 // User
 
-const PROFILE = '/profile';
-const CHAT_ME = '/chat-me';
-const EDIT_PROFILE = '/edit-profile';
-const BIG_IMAGE = '/big-image';
+const PROFILE = "/profile";
+const CHAT_ME = "/chat-me";
+const EDIT_PROFILE = "/edit-profile";
+const BIG_IMAGE = "/big-image";
 
 const routes = {
-    home : HOME,
-    friends : FRIENDS,
-    chats : CHATS,
-    find : FIND,
-    more : MORE,
+  home: HOME,
+  friends: FRIENDS,
+  chats: CHATS,
+  find: FIND,
+  more: MORE,
+  friendSearch: FRINED_SEACH,
+  login: LOGIN,
+  join: JOIN,
 
-    chat : CHAT,
-    chatDelete : CHAT_DELETE,
+  chat: id => {
+    if (id) {
+      return `/chats/${id}`;
+    } else {
+      return CHAT;
+    }
+  },
+  chatsHome: CHATS_HOME,
+  chatDelete: CHAT_DELETE,
+  chatSearch: CHAT_SEARCH,
+  createChat: CREATE_CHAT,
 
-    profile : PROFILE,
-    chatMe : CHAT_ME,
-    editProfile : EDIT_PROFILE,
-    bigImage : BIG_IMAGE
-
+  profile: PROFILE,
+  chatMe: CHAT_ME,
+  editProfile: EDIT_PROFILE,
+  bigImage: BIG_IMAGE
 };
 
 export default routes;

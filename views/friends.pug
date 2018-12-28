@@ -1,1 +1,13 @@
 extends layouts/main
+include mixins/friendsList
+
+block searchBar
+    include partials/searchBar
+block content
+    .friends
+        each item in friendsList
+            +friendsList({
+                image: item.user.image,
+                name: item.user.name
+            })
+    include partials/mainNav

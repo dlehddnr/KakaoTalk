@@ -1,1 +1,12 @@
 extends layouts/main
+
+block content
+    ul
+        if !user.isAuthenticated
+            li
+                a(href=routes.join) Join
+            li
+                a(href=routes.login) Log In
+        else
+            li
+                a(href=routes.friends) Go Home

@@ -1,0 +1,10 @@
+extends layouts/main
+
+block content
+    .form-container
+        form(action=`/chats${routes.createChat}`, method="post")
+            label(for="file") Avatar
+            input(type="file", name="file", id="file", required= true)
+            input(type="text", name="name", placeholder="Name", required= true)
+            textarea(name="message", placeholder="Last Message", required= true)
+            input(type="submit", value="Create Chat")

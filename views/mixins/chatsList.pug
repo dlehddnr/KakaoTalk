@@ -1,0 +1,6 @@
+mixin chatsList(cl = {})
+    .chats-list
+        a(href=routes.chat(cl.id))
+            img(src=cl.user)
+            h4=cl.message
+            h6=cl.date
